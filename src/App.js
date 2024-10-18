@@ -1,25 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { db } from './firebase.js'; // Certifique-se de que o caminho está correto
+import { useEffect } from 'react';
+import React, { useState } from 'react';
+import Header from './Header'; // Corrige o caminho para o componente Header
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function App()  {
+
+  const [user, setUser] = useState();
+
+    useEffect(() => {
+        // Aqui você pode adicionar a lógica que quiser
+    }, []);
+
+    return (
+        <div className="App">
+
+
+            <Header setUser={setUser} user={user} /> {/* Uso correto do componente Header */}
+            
+        </div>
+    );
 }
 
 export default App;
